@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansi Travels — Book Packages &amp; Tickets Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2545;
+    --navy-deep:#071A33;
+    --navy-mid:#123464;
+    --gold:#B8924E;
+    --gold-deep:#96742F;
+    --ivory:#F7F5EF;
+    --paper:#FCFBF8;
+    --line:#DDD7C7;
+    --ink:#16202E;
+    --slate:#4B5768;
+    --ok:#2F7A50;
+    --white:#FFFFFF;
+    --radius-pill:999px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter', -apple-system, sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    line-height:1.14;
+    color:var(--navy);
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--gold);color:var(--white);}
+  :focus-visible{outline:2.5px solid var(--gold-deep);outline-offset:2px;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(252,251,248,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:42px;height:42px;border-radius:50%;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;border:1px solid var(--gold);
+  }
+  .brand-mark span{
+    font-family:'Fraunces',serif;color:var(--gold);font-size:1.05rem;font-weight:600;letter-spacing:.02em;
+  }
+  .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .brand-name{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;letter-spacing:.005em;color:var(--navy);}
+  .brand-sub{font-size:.68rem;color:var(--gold-deep);margin-top:-2px;letter-spacing:.04em;}
+  nav.links{display:flex;align-items:center;gap:32px;}
+  nav.links a{font-size:.92rem;font-weight:500;color:var(--slate);padding:6px 0;border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--navy);border-color:var(--gold);}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:11px 22px;border-radius:4px;
+    font-size:.87rem;font-weight:600;border:1.5px solid transparent;
+    transition:transform .12s ease, background .15s ease, border-color .15s ease, color .15s ease;
+    letter-spacing:.01em;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--navy);color:var(--white);}
+  .btn-primary:hover{background:var(--navy-deep);}
+  .btn-gold{background:var(--gold);color:var(--navy-deep);}
+  .btn-gold:hover{background:var(--gold-deep);color:var(--white);}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--navy);}
+  .btn-ghost-dark{background:transparent;color:var(--ivory);border-color:rgba(247,245,239,.35);}
+  .btn-ghost-dark:hover{border-color:var(--gold);color:var(--gold);}
+  .btn-block{width:100%;}
+  .btn-sm{padding:9px 16px;font-size:.8rem;}
+  .btn-xs{padding:6px 12px;font-size:.74rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--navy);
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(600px 400px at 85% -10%, rgba(184,146,78,.18), transparent 60%),
+      radial-gradient(500px 350px at 100% 100%, rgba(184,146,78,.10), transparent 60%);
+    pointer-events:none;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:56px;
+    padding-top:80px;padding-bottom:60px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .eyebrow-plain{font-size:.86rem;color:var(--gold);font-weight:600;margin-bottom:16px;letter-spacing:.02em;}
+  .hero h1{
+    font-size:clamp(2.3rem, 4vw, 3.35rem);
+    color:var(--white);
+    max-width:12ch;
+  }
+  .hero p.lead{
+    margin-top:20px;font-size:1.07rem;color:#C7D0DE;max-width:46ch;
+  }
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+
+  .route-art{width:100%;position:relative;z-index:2;}
+
+  .search-card{
+    margin-top:-36px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px;
+    display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:14px;
+    align-items:end;
+    box-shadow:0 24px 50px -26px rgba(7,26,51,.45);
+    position:relative;
+    z-index:5;
+  }
+  .field label{display:block;font-size:.72rem;font-weight:600;color:var(--navy);margin-bottom:6px;letter-spacing:.01em;}
+  .field select, .field input{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:4px;
+    font-family:inherit;font-size:.92rem;background:var(--white);color:var(--ink);
+  }
+  .field select:focus,.field input:focus{border-color:var(--gold-deep);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:60ch;margin-bottom:38px;}
+  .section-head .kicker{font-size:.78rem;font-weight:600;color:var(--gold-deep);letter-spacing:.03em;margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.75rem,2.6vw,2.3rem);}
+  .section-head p{margin-top:12px;color:var(--slate);font-size:1.02rem;}
+
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .pkg-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .pkg-card:hover{border-color:var(--navy);box-shadow:0 16px 32px -22px rgba(7,26,51,.35);}
+  .pkg-art{
+    height:152px;position:relative;overflow:hidden;
+    display:flex;align-items:flex-end;padding:16px 18px;
+    color:var(--white);
+  }
+  .pkg-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+  .pkg-art::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(7,26,51,0) 25%, rgba(7,26,51,.62));}
+  .pkg-art span{position:relative;z-index:3;font-family:'Fraunces',serif;font-weight:600;font-size:1.14rem;}
+  .pkg-body{padding:20px;display:flex;flex-direction:column;gap:11px;flex:1;}
+  .pkg-meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--slate);}
+  .pkg-desc{font-size:.89rem;color:#33404F;}
+  .pkg-price{display:flex;align-items:baseline;gap:6px;margin-top:auto;}
+  .pkg-price .amt{font-family:'Fraunces',serif;font-size:1.42rem;font-weight:600;color:var(--navy);}
+  .pkg-price .per{font-size:.78rem;color:var(--slate);}
+  .tag{display:inline-block;padding:3px 10px;border-radius:var(--radius-pill);background:#EFE9D8;font-size:.72rem;font-weight:600;color:var(--gold-deep);}
+  .rating-line{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--gold-deep);}
+  .stars{letter-spacing:1px;}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  .step{border-top:2px solid var(--gold);padding-top:18px;}
+  .step .num{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--gold-deep);}
+  .step h3{margin-top:10px;font-size:1.08rem;}
+  .step p{margin-top:8px;color:var(--slate);font-size:.92rem;}
+
+  .trust-band{background:var(--navy);color:var(--ivory);}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+  .trust-grid .big{font-family:'Fraunces',serif;font-size:2rem;color:var(--gold);}
+  .trust-grid .lbl{font-size:.82rem;color:#B9C4D6;margin-top:6px;}
+
+  footer.site{background:var(--navy-deep);color:#AEBBCF;padding:56px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:38px;}
+  footer.site h4{color:var(--ivory);font-size:1rem;margin-bottom:14px;font-family:'Fraunces',serif;font-weight:600;}
+  footer.site a, footer.site p{font-size:.87rem;color:#93A2BA;}
+  footer.site a{display:block;margin-bottom:9px;}
+  footer.site a:hover{color:var(--gold);}
+  .foot-bottom{margin-top:42px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:#6C7C97;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- MODAL / OVERLAY SYSTEM ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(7,20,40,.6);
+    display:none;align-items:center;justify-content:center;z-index:100;padding:20px;
+  }
+  .overlay.show{display:flex;}
+  .modal{
+    background:var(--paper);border-radius:6px;max-width:440px;width:100%;
+    max-height:88vh;overflow-y:auto;
+    padding:30px 28px;position:relative;
+    border:1px solid var(--line);
+  }
+  .modal.wide{max-width:760px;}
+  .modal.narrow{max-width:400px;}
+  .modal-close{
+    position:absolute;top:16px;right:16px;background:none;border:none;
+    width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    color:var(--navy);font-size:1rem;
+  }
+  .modal-close:hover{background:#EFE9D8;}
+  .modal h3{font-size:1.35rem;margin-bottom:4px;}
+  .modal .sub{font-size:.86rem;color:var(--slate);margin-bottom:22px;}
+  .tabs{display:flex;gap:6px;background:#EFE9D8;padding:4px;border-radius:var(--radius-pill);margin-bottom:22px;}
+  .tab-btn{flex:1;padding:9px 10px;border:none;background:transparent;border-radius:var(--radius-pill);font-size:.84rem;font-weight:600;color:var(--slate);}
+  .tab-btn.active{background:var(--navy);color:var(--white);}
+  .formfield{margin-bottom:14px;}
+  .formfield label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;color:var(--navy);}
+  .formfield input, .formfield select, .formfield textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:4px;
+    font-family:inherit;font-size:.92rem;background:var(--white);
+  }
+  .formfield input:focus, .formfield select:focus, .formfield textarea:focus{border-color:var(--gold-deep);}
+  .hint{font-size:.76rem;color:#7A8494;margin-top:4px;}
+  .demo-creds{
+    background:#EFE9D8;border-radius:4px;padding:10px 12px;font-size:.78rem;color:var(--navy);margin-bottom:18px;
+  }
+  .err-msg{background:#F6E3DC;color:#A6462A;font-size:.82rem;padding:9px 12px;border-radius:4px;margin-bottom:14px;display:none;}
+  .err-msg.show{display:block;}
+
+  /* ---------- DASHBOARD ---------- */
+  .dash{display:none;min-height:100vh;background:var(--ivory);}
+  .dash.show{display:block;}
+  .dash-top{
+    background:var(--navy);color:var(--ivory);padding:18px 0;
+    position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(184,146,78,.35);
+  }
+  .dash-top .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .dash-who-row{display:flex;align-items:center;gap:12px;}
+  .dash-avatar{width:38px;height:38px;border-radius:50%;background:var(--navy-mid);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+  .dash-avatar img{width:100%;height:100%;object-fit:cover;}
+  .dash-avatar span{font-family:'Fraunces',serif;color:var(--gold);font-size:.9rem;}
+  .dash-role{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
+  .dash-who{font-family:'Fraunces',serif;font-size:1.1rem;}
+  .dash-body{padding:36px 0 80px;}
+  .dash-nav{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap;}
+  .dash-nav button{
+    padding:9px 18px;border-radius:var(--radius-pill);border:1.5px solid var(--line);
+    background:var(--white);font-size:.85rem;font-weight:600;color:var(--slate);
+  }
+  .dash-nav button.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  .panel{display:none;}
+  .panel.show{display:block;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:20px;}
+  .stat .big{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--navy);}
+  .stat .lbl{font-size:.8rem;color:var(--slate);margin-top:4px;}
+
+  table.data{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  table.data th{
+    text-align:left;font-size:.74rem;color:var(--navy);font-weight:700;letter-spacing:.02em;
+    padding:12px 14px;background:#EFE9D8;border-bottom:1px solid var(--line);
+  }
+  table.data td{padding:12px 14px;font-size:.87rem;border-bottom:1px solid var(--line);color:#293244;vertical-align:middle;}
+  table.data tr:last-child td{border-bottom:none;}
+  table.data .row-actions{display:flex;gap:6px;flex-wrap:wrap;}
+  .pill-status{padding:3px 10px;border-radius:var(--radius-pill);font-size:.72rem;font-weight:600;}
+  .pill-paid{background:#DEEFE3;color:var(--ok);}
+  .pill-confirmed{background:#DCE7F2;color:#1E5178;}
+
+  .card-form{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px;max-width:560px;}
+  .card-form h3{font-size:1.1rem;margin-bottom:18px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+
+  .empty-state{
+    text-align:center;padding:50px 20px;color:var(--slate);background:var(--white);border:1px dashed var(--line);border-radius:6px;
+  }
+
+  .pkg-list-item{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    background:var(--white);border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin-bottom:12px;
+  }
+  .pkg-list-item .info{display:flex;align-items:center;gap:14px;}
+  .pkg-thumb{width:58px;height:58px;border-radius:5px;overflow:hidden;flex-shrink:0;background:var(--navy);display:flex;align-items:center;justify-content:center;}
+  .pkg-thumb img{width:100%;height:100%;object-fit:cover;}
+  .pkg-list-item .info h4{font-size:1rem;}
+  .pkg-list-item .info p{font-size:.82rem;color:var(--slate);margin-top:4px;}
+  .pkg-list-item .actions{display:flex;gap:8px;flex-shrink:0;}
+
+  /* Photo upload */
+  .photo-upload-row{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+  .photo-preview{width:72px;height:72px;border-radius:8px;overflow:hidden;background:#EFE9D8;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .photo-preview.round{border-radius:50%;}
+  .photo-preview img{width:100%;height:100%;object-fit:cover;}
+  .photo-preview span{font-family:'Fraunces',serif;color:var(--gold-deep);font-size:1.3rem;}
+  .file-btn{display:inline-block;padding:9px 16px;border:1.5px solid var(--line);border-radius:4px;font-size:.82rem;font-weight:600;color:var(--navy);cursor:pointer;background:var(--white);}
+  .file-btn:hover{border-color:var(--navy);}
+  .file-btn input{display:none;}
+
+  /* Payment flow (booking) */
+  .paystep-badges{display:flex;gap:8px;margin-bottom:22px;}
+  .paystep-badges span{
+    flex:1;text-align:center;font-size:.75rem;font-weight:600;padding:8px 4px;border-radius:4px;
+    background:#EFE9D8;color:#9A9074;
+  }
+  .paystep-badges span.on{background:var(--navy);color:var(--white);}
+  .pay-method-row{display:flex;gap:10px;margin-bottom:16px;}
+  .pay-method-row button{
+    flex:1;padding:12px;border:1.5px solid var(--line);border-radius:4px;background:var(--white);font-size:.84rem;font-weight:600;color:var(--slate);
+  }
+  .pay-method-row button.active{border-color:var(--gold-deep);color:var(--gold-deep);background:#FBF6EC;}
+  .summary-box{background:#EFE9D8;border-radius:4px;padding:16px;font-size:.88rem;margin-bottom:18px;}
+  .summary-box .row{display:flex;justify-content:space-between;margin-bottom:6px;}
+  .summary-box .row.total{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-weight:700;color:var(--navy);}
+
+  /* Reviews */
+  .review-item{border-top:1px solid var(--line);padding:14px 0;}
+  .review-item:first-child{border-top:none;}
+  .review-head{display:flex;justify-content:space-between;align-items:center;font-size:.86rem;font-weight:600;color:var(--navy);}
+  .review-item p{font-size:.86rem;color:#33404F;margin-top:6px;}
+  .star-picker{display:flex;gap:6px;margin-bottom:14px;}
+  .star-picker button{background:none;border:none;font-size:1.5rem;color:#D9D2BC;padding:0;line-height:1;}
+  .star-picker button.on{color:var(--gold);}
+
+  /* Luxury Ticket */
+  .ticket{
+    background:var(--white);border-radius:10px;overflow:hidden;
+    display:grid;grid-template-columns:1fr 150px;
+    box-shadow:0 20px 46px -24px rgba(7,26,51,.5);
+    border:1px solid var(--line);
+  }
+  .ticket-main{padding:26px 24px;position:relative;}
+  .ticket-main::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(11,37,69,.03), transparent 50%);pointer-events:none;}
+  .ticket-brand{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+  .ticket-brand .mark{width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);}
+  .ticket-brand .mark span{font-family:'Fraunces',serif;color:var(--gold);font-size:.85rem;}
+  .ticket-brand b{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--navy);}
+  .ticket-route{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--navy);margin-bottom:4px;}
+  .ticket-sub{font-size:.82rem;color:var(--slate);margin-bottom:20px;}
+  .ticket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 12px;margin-bottom:18px;}
+  .ticket-grid div .k{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:var(--gold-deep);font-weight:700;margin-bottom:4px;}
+  .ticket-grid div .v{font-size:.94rem;color:var(--ink);font-weight:600;}
+  .ticket-terms{font-size:.7rem;color:#7A8494;border-top:1px dashed var(--line);padding-top:12px;line-height:1.5;}
+  .ticket-stub{
+    background:var(--navy);color:var(--ivory);padding:24px 18px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    position:relative;border-left:2px dashed rgba(247,245,239,.3);
+  }
+  .ticket-stub::before, .ticket-stub::after{
+    content:"";position:absolute;width:22px;height:22px;background:var(--ivory);border-radius:50%;left:-11px;
+  }
+  .ticket-stub::before{top:-11px;}
+  .ticket-stub::after{bottom:-11px;}
+  .ticket-seat{text-align:center;}
+  .ticket-seat .k{font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:4px;}
+  .ticket-seat .v{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--white);}
+  .ticket-barcode{width:100%;height:46px;background:repeating-linear-gradient(90deg, var(--ivory) 0 2px, transparent 2px 5px, var(--ivory) 5px 6px, transparent 6px 9px);opacity:.85;}
+  .ticket-bid{font-size:.68rem;color:#C7D0DE;letter-spacing:.04em;}
+  .ticket-actions{display:flex;gap:10px;margin-top:22px;}
+
+  /* Live tracking */
+  .track-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:24px;}
+  .track-route-line{position:relative;height:6px;background:#EFE9D8;border-radius:3px;margin:36px 0 12px;}
+  .track-route-line .fill{position:absolute;left:0;top:0;height:100%;background:var(--gold);border-radius:3px;transition:width 1s linear;}
+  .track-bus-dot{position:absolute;top:50%;width:26px;height:26px;background:var(--navy);border:2px solid var(--gold);border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;transition:left 1s linear;}
+  .track-bus-dot span{font-size:.75rem;}
+  .track-endpoints{display:flex;justify-content:space-between;font-size:.82rem;color:var(--navy);font-weight:600;}
+  .track-meta{display:flex;justify-content:space-between;margin-top:20px;font-size:.86rem;color:var(--slate);}
+  .track-meta b{color:var(--navy);}
+  .track-note{margin-top:18px;font-size:.78rem;color:#7A8494;background:#EFE9D8;padding:10px 12px;border-radius:4px;}
+
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:var(--navy);color:var(--ivory);padding:13px 22px;border-radius:var(--radius-pill);
+    font-size:.87rem;font-weight:600;z-index:200;opacity:0;pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    box-shadow:0 12px 30px -10px rgba(0,0,0,.4);
+    border:1px solid rgba(184,146,78,.4);
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}
+
+  @media print{
+    body *{visibility:hidden;}
+    #ticketPrintArea, #ticketPrintArea *{visibility:visible;}
+    #ticketPrintArea{position:absolute;top:0;left:0;width:100%;padding:20px;}
+  }
+
+  @media (max-width:920px){
+    nav.links{display:none;}
+    .hero .wrap{grid-template-columns:1fr;padding-top:44px;}
+    .route-art{display:none;}
+    .search-card{grid-template-columns:1fr 1fr;margin-top:24px;}
+    .pkg-grid{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr 1fr;}
+    .grid2{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:1fr 1fr;}
+    .ticket{grid-template-columns:1fr;}
+    .ticket-stub{border-left:none;border-top:2px dashed rgba(247,245,239,.3);flex-direction:row;justify-content:space-between;padding:18px 20px;}
+    .ticket-stub::before{left:-11px;top:-11px;}
+    .ticket-stub::after{left:auto;right:-11px;bottom:-11px;top:-11px;}
+  }
+  @media (max-width:600px){
+    .pkg-grid{grid-template-columns:1fr;}
+    .search-card{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr;}
+    .nav-actions{gap:6px;}
+    .btn-sm{padding:8px 12px;font-size:.74rem;}
+    .ticket-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PUBLIC SITE ============ -->
+<div id="publicSite">
+
+  <header class="site">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="brand-mark" id="siteBrandMark"><span>MT</span></div>
+        <div>
+          <div class="brand-name">Mansi Travels</div>
+          <div class="brand-sub">JOURNEYS, PLANNED RIGHT</div>
+        </div>
+      </div>
+      <nav class="links">
+        <a href="#packages">Packages</a>
+        <a href="#how">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" onclick="openAuth('agent')">Agent Login</button>
+        <button class="btn btn-primary" onclick="openAuth('customer')">Login / Book Now</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow-plain">40+ CURATED DESTINATIONS ACROSS INDIA</div>
+        <h1>Your next holiday, booked in minutes</h1>
+        <p class="lead">Browse packages, pick your dates, and pay securely — right here on the site. Every booking is confirmed instantly, with no phone calls or waiting on an agent.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-gold" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">Explore Packages</button>
+          <button class="btn btn-ghost-dark" onclick="openAuth('customer')">Create an Account</button>
+        </div>
+      </div>
+      <div class="route-art">
+        <svg viewBox="0 0 420 380" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 320 C 120 300, 130 200, 210 190 S 320 100, 380 60" stroke="#2C4E7A" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round" fill="none"/>
+          <circle cx="40" cy="320" r="6" fill="#B8924E"/>
+          <circle cx="210" cy="190" r="5" fill="#F7F5EF"/>
+          <circle cx="380" cy="60" r="6" fill="#B8924E"/>
+          <g transform="translate(355,35) rotate(35)">
+            <path d="M0 10 L22 0 L0 -10 L4 0 Z" fill="#F7F5EF"/>
+          </g>
+          <text x="20" y="345" fill="#8FA0BE" font-family="Inter" font-size="12">Delhi</text>
+          <text x="185" y="215" fill="#8FA0BE" font-family="Inter" font-size="12">Udaipur</text>
+          <text x="355" y="85" fill="#8FA0BE" font-family="Inter" font-size="12">Manali</text>
+        </svg>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="search-card">
+        <div class="field">
+          <label>Destination</label>
+          <select id="searchDest">
+            <option value="">Anywhere</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Travel Date</label>
+          <input type="date" id="searchDate">
+        </div>
+        <div class="field">
+          <label>Travellers</label>
+          <select id="searchPax">
+            <option>1 Traveller</option>
+            <option selected>2 Travellers</option>
+            <option>3 Travellers</option>
+            <option>4+ Travellers</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="filterPackages()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">FEATURED PACKAGES</div>
+        <h2>Handpicked trips, transparent pricing</h2>
+        <p>Every package includes stay, local transport and select meals. Click any package for the full itinerary and reviews.</p>
+      </div>
+      <div class="pkg-grid" id="pkgGrid"></div>
+    </div>
+  </section>
+
+  <section class="trust-band">
+    <div class="wrap">
+      <div class="trust-grid">
+        <div><div class="big">40+</div><div class="lbl">Destinations Covered</div></div>
+        <div><div class="big">12k+</div><div class="lbl">Travellers Served</div></div>
+        <div><div class="big">4.8/5</div><div class="lbl">Average Rating</div></div>
+        <div><div class="big">24×7</div><div class="lbl">Support</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">HOW IT WORKS</div>
+        <h2>Booking in three simple steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Choose a package</h3>
+          <p>Browse by destination, duration or budget — every listing states its price and inclusions upfront.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Add your travel details</h3>
+          <p>Enter your travel date and number of travellers — the total price updates instantly.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Pay and get your ticket</h3>
+          <p>Pay by UPI, card or net banking. Your seat, e-ticket and live bus tracking appear right away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site" id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Mansi Travels</h4>
+          <p style="margin-bottom:10px;">A booking platform built to make every journey simple and dependable, from planning to payment.</p>
+          <p>📍 Main Bazaar, Ambala, Haryana</p>
+          <p>📞 +91 98XXX XXXXX</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#packages">All Packages</a>
+          <a href="javascript:void(0)" onclick="openAuth('customer')">Customer Login</a>
+          <a href="javascript:void(0)" onclick="openAuth('agent')">Agent Login</a>
+          <a href="javascript:void(0)" onclick="openAuth('admin')">Admin Login</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="javascript:void(0)">How to Cancel a Booking</a>
+          <a href="javascript:void(0)">Payment Questions</a>
+          <a href="javascript:void(0)">Contact Us</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Mansi Travels. All rights reserved.</span>
+        <span>This is a demo site — payments and live tracking shown here are simulated, not real.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ============ AUTH OVERLAY ============ -->
+<div class="overlay" id="authOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAuth()">✕</button>
+    <div id="authContent"></div>
+  </div>
+</div>
+
+<!-- ============ PACKAGE DETAIL OVERLAY ============ -->
+<div class="overlay" id="pkgOverlay">
+  <div class="modal wide">
+    <button class="modal-close" onclick="closeOverlay('pkgOverlay')">✕</button>
+    <div id="pkgDetailContent"></div>
+  </div>
+</div>
+
+<!-- ============ BOOKING / PAYMENT OVERLAY ============ -->
+<div class="overlay" id="bookOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOverlay('bookOverlay')">✕</button>
+    <div id="bookContent"></div>
+  </div>
+</div>
+
+<!-- ============ TICKET OVERLAY ============ -->
+<div class="overlay" id="ticketOverlay">
+  <div class="modal wide" style="max-width:620px;padding:28px;">
+    <button class="modal-close" onclick="closeOverlay('ticketOverlay')">✕</button>
+    <div id="ticketContent"></div>
+  </div>
+</div>
+
+<!-- ============ TRACKING OVERLAY ============ -->
+<div class="overlay" id="trackOverlay">
+  <div class="modal" style="max-width:480px;">
+    <button class="modal-close" onclick="closeOverlay('trackOverlay')">✕</button>
+    <div id="trackContent"></div>
+  </div>
+</div>
+
+<!-- ============ CUSTOMER DASHBOARD ============ -->
+<div class="dash" id="dashCustomer">
+  <div class="dash-top">
+    <div class="wrap">
+      <div class="dash-who-row">
+        <div class="dash-avatar"><span>C</span></div>
+        <div>
+          <div class="dash-role">Customer</div>
+          <div class="dash-who" id="custName">—</div>
+        </div>
+      </div>
+      <button class="btn btn-ghost-dark btn-sm" onclick="logout('customer')">Log Out</button>
+    </div>
+  </div>
+  <div class="dash-body wrap">
+    <div class="dash-nav">
+      <button class="active" onclick="showPanel('customer','browse')">Browse Packages</button>
+      <button onclick="showPanel('customer','bookings')">My Bookings</button>
+    </div>
+    <div class="panel show" id="cust-browse">
+      <div class="pkg-grid" id="custPkgGrid"></div>
+    </div>
+    <div class="panel" id="cust-bookings">
+      <div id="custBookingsTable"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ AGENT DASHBOARD ============ -->
+<div class="dash" id="dashAgent">
+  <div class="dash-top">
+    <div class="wrap">
+      <div class="dash-who-row">
+        <div class="dash-avatar" id="agentAvatar"><span>A</span></div>
+        <div>
+          <div class="dash-role">Agent</div>
+          <div class="dash-who" id="agentName">—</div>
+        </div>
+      </div>
+      <button class="btn btn-ghost-dark btn-sm" onclick="logout('agent')">Log Out</button>
+    </div>
+  </div>
+  <div class="dash-body wrap">
+    <div class="dash-nav">
+      <button class="active" onclick="showPanel('agent','packages')">My Packages</button>
+      <button onclick="showPanel('agent','add')">Add New Package</button>
+      <button onclick="showPanel('agent','bookings')">Incoming Bookings</button>
+      <button onclick="showPanel('agent','profile')">My Profile &amp; Payments</button>
+    </div>
+    <div class="panel show" id="agent-packages">
+      <div id="agentPkgList"></div>
+    </div>
+    <div class="panel" id="agent-add">
+      <div class="card-form">
+        <h3 id="pkgFormTitle">Add New Package</h3>
+        <input type="hidden" id="editPkgId" value="">
+        <div class="photo-upload-row">
+          <div class="photo-preview" id="pkgPhotoPreview"><span>🖼</span></div>
+          <div>
+            <label class="file-btn">Upload Package Photo<input type="file" accept="image/*" onchange="handlePkgPhoto(event)"></label>
+            <p class="hint">Shown on the package card and ticket. JPG or PNG works best.</p>
+          </div>
+        </div>
+        <div class="formfield">
+          <label>Package Name</label>
+          <input type="text" id="pkgName" placeholder="e.g. Goa Beach Escape — 4 Days">
+        </div>
+        <div class="grid2">
+          <div class="formfield">
+            <label>Destination</label>
+            <input type="text" id="pkgDest" placeholder="Goa">
+          </div>
+          <div class="formfield">
+            <label>Duration (days)</label>
+            <input type="number" id="pkgDays" placeholder="4" min="1">
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="formfield">
+            <label>Price (₹ / person)</label>
+            <input type="number" id="pkgPrice" placeholder="12999" min="0">
+          </div>
+          <div class="formfield">
+            <label>Seats Available</label>
+            <input type="number" id="pkgSeats" placeholder="20" min="0">
+          </div>
+        </div>
+        <div class="formfield">
+          <label>Description</label>
+          <textarea id="pkgDesc" rows="3" placeholder="What's included — stay, meals and local travel"></textarea>
+        </div>
+        <div class="formfield" style="display:flex;align-items:center;gap:8px;">
+          <input type="checkbox" id="pkgTracking" style="width:auto;" checked>
+          <label style="margin:0;" for="pkgTracking">Enable live bus tracking for travellers on this package</label>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="savePackage()">Save Package</button>
+      </div>
+    </div>
+    <div class="panel" id="agent-bookings">
+      <div id="agentBookingsTable"></div>
+    </div>
+    <div class="panel" id="agent-profile">
+      <div class="card-form" style="max-width:600px;">
+        <h3>Business Logo</h3>
+        <div class="photo-upload-row">
+          <div class="photo-preview round" id="siteLogoPreview"><span>MT</span></div>
+          <div>
+            <label class="file-btn">Upload Logo<input type="file" accept="image/*" onchange="handleSiteLogo(event)"></label>
+            <p class="hint">Replaces the "MT" mark in the website header and on every ticket. A square image works best.</p>
+          </div>
+        </div>
+        <h3>My Profile</h3>
+        <div class="photo-upload-row">
+          <div class="photo-preview round" id="agProfPhotoPreview"><span>👤</span></div>
+          <div>
+            <label class="file-btn">Upload Photo<input type="file" accept="image/*" onchange="handleAgentPhoto(event)"></label>
+            <p class="hint">Shown to travellers next to your packages, not on the ticket branding.</p>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="formfield"><label>Full Name</label><input type="text" id="agProfName"></div>
+          <div class="formfield"><label>Phone Number</label><input type="tel" id="agProfPhone" placeholder="98XXXXXXXX"></div>
+        </div>
+
+        <h3 style="margin-top:8px;">Payment Method</h3>
+        <p class="hint" style="margin-bottom:14px;">Customer payments for your packages are credited here.</p>
+        <div class="pay-method-row">
+          <button type="button" id="agPayUPIBtn" onclick="setAgentPayMethod('upi')">UPI</button>
+          <button type="button" id="agPayBankBtn" onclick="setAgentPayMethod('bank')">Bank Transfer</button>
+        </div>
+        <div id="agentPayFields"></div>
+
+        <h3 style="margin-top:8px;">Terms &amp; Conditions</h3>
+        <p class="hint" style="margin-bottom:8px;">This text is printed on every ticket for your packages.</p>
+        <div class="formfield">
+          <textarea id="agProfTerms" rows="4"></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="saveAgentProfile()">Save Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADMIN DASHBOARD ============ -->
+<div class="dash" id="dashAdmin">
+  <div class="dash-top">
+    <div class="wrap">
+      <div>
+        <div class="dash-role">Admin</div>
+        <div class="dash-who">Mansi Travels — Overview</div>
+      </div>
+      <button class="btn btn-ghost-dark btn-sm" onclick="logout('admin')">Log Out</button>
+    </div>
+  </div>
+  <div class="dash-body wrap">
+    <div class="stat-row">
+      <div class="stat"><div class="big" id="statPkgs">0</div><div class="lbl">Total Packages</div></div>
+      <div class="stat"><div class="big" id="statBookings">0</div><div class="lbl">Total Bookings</div></div>
+      <div class="stat"><div class="big" id="statRevenue">₹0</div><div class="lbl">Total Payments Received</div></div>
+      <div class="stat"><div class="big" id="statAgents">0</div><div class="lbl">Active Agents</div></div>
+    </div>
+    <div class="dash-nav">
+      <button class="active" onclick="showPanel('admin','bookings')">All Bookings</button>
+      <button onclick="showPanel('admin','packages')">All Packages</button>
+      <button onclick="showPanel('admin','agents')">Agents</button>
+    </div>
+    <div class="panel show" id="admin-bookings"><div id="adminBookingsTable"></div></div>
+    <div class="panel" id="admin-packages"><div id="adminPkgTable"></div></div>
+    <div class="panel" id="admin-agents"><div id="adminAgentTable"></div></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   MANSI TRAVELS — DEMO DATA LAYER (in-memory, resets on reload)
+   In a real deployment this would call a backend + a payment
+   gateway (Razorpay/PayU) and a real GPS feed for bus tracking.
+   ============================================================ */
+
+let db = {
+  packages: [
+    {id:'p1', name:'Goa Beach Escape', dest:'Goa', days:4, price:12999, seats:18, desc:'Beachfront resort stay, sunset cruise and a full South Goa sightseeing tour.', agent:'a1', color:'#0B2545', photo:null, tracking:true},
+    {id:'p2', name:'Manali-Kasol Hill Adventure', dest:'Manali', days:5, price:15499, seats:12, desc:'Mountain camping, Solang Valley adventure sports and a local market tour.', agent:'a1', color:'#123464', photo:null, tracking:true},
+    {id:'p3', name:'Udaipur Royal Heritage', dest:'Udaipur', days:3, price:10999, seats:20, desc:'Lake-view heritage hotel, City Palace tour and a sunset boat ride included.', agent:'a2', color:'#96742F', photo:null, tracking:true},
+    {id:'p4', name:'Kerala Backwaters Retreat', dest:'Kerala', days:6, price:21999, seats:10, desc:'Private houseboat stay, Munnar tea gardens and an Ayurvedic spa session.', agent:'a2', color:'#071A33', photo:null, tracking:false},
+    {id:'p5', name:'Jaisalmer Desert Safari', dest:'Jaisalmer', days:3, price:9499, seats:25, desc:'Camel safari, an overnight desert camp and a traditional folk music evening.', agent:'a1', color:'#B8924E', photo:null, tracking:true},
+    {id:'p6', name:'Andaman Island Getaway', dest:'Andaman', days:5, price:27999, seats:8, desc:'Guided scuba session, Radhanagar Beach and the Cellular Jail heritage tour.', agent:'a2', color:'#16202E', photo:null, tracking:false},
+  ],
+  bookings: [],
+  customers: [],
+  reviews: [],
+  agents: [
+    {id:'a1', name:'Rohit Sharma', email:'agent@mansitravels.com', password:'agent123', phone:'', photo:null,
+      payment:{method:'upi', upi:'', holder:'', accountNo:'', ifsc:'', bankName:''},
+      terms:'Tickets are non-transferable. Cancellations made more than 7 days before travel are eligible for a partial refund. Please carry a valid photo ID for all travellers.'},
+    {id:'a2', name:'Priya Verma', email:'priya@mansitravels.com', password:'priya123', phone:'', photo:null,
+      payment:{method:'upi', upi:'', holder:'', accountNo:'', ifsc:'', bankName:''},
+      terms:'Tickets are non-transferable. Cancellations made more than 7 days before travel are eligible for a partial refund. Please carry a valid photo ID for all travellers.'},
+  ],
+  admin: {email:'admin@mansitravels.com', password:'admin123'},
+  site: {logo:null},
+};
+
+let session = { role:null, id:null };
+let pendingBooking = null;
+let pendingPkgPhoto = null;
+let pendingAgentPhoto = null;
+let pendingSiteLogo = null;
+let reviewDraftRating = 0;
+let trackTimer = null;
+
+function updateBrandMark(){
+  const mark = document.getElementById('siteBrandMark');
+  if(mark) mark.innerHTML = db.site.logo ? `<img src="${db.site.logo}" alt="Mansi Travels logo">` : `<span>MT</span>`;
+}
+
+function handleSiteLogo(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    pendingSiteLogo = e.target.result;
+    document.getElementById('siteLogoPreview').innerHTML = `<img src="${pendingSiteLogo}" alt="">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+function fmtMoney(n){ return '₹' + Number(n).toLocaleString('en-IN'); }
+
+function starsHTML(rating){
+  const full = Math.round(rating);
+  let s = '';
+  for(let i=1;i<=5;i++){ s += i<=full ? '★' : '☆'; }
+  return s;
+}
+
+function pkgReviews(pkgId){ return db.reviews.filter(r=>r.pkgId===pkgId); }
+function pkgAvgRating(pkgId){
+  const rs = pkgReviews(pkgId);
+  if(!rs.length) return 0;
+  return rs.reduce((s,r)=>s+r.rating,0) / rs.length;
+}
+
+/* ---------------- PACKAGE RENDERING ---------------- */
+
+function pkgCardHTML(p){
+  const avg = pkgAvgRating(p.id);
+  const count = pkgReviews(p.id).length;
+  return `
+  <div class="pkg-card">
+    <div class="pkg-art" style="background:${p.color}">
+      ${p.photo ? `<img src="${p.photo}" alt="${p.name}">` : ''}
+      <span>${p.name}</span>
+    </div>
+    <div class="pkg-body">
+      <div class="pkg-meta"><span>${p.days} Days</span><span class="tag">${p.seats} seats left</span></div>
+      ${count ? `<div class="rating-line"><span class="stars">${starsHTML(avg)}</span><span>${avg.toFixed(1)} (${count} review${count>1?'s':''})</span></div>` : `<div class="rating-line" style="color:#9AA6B4;">No reviews yet</div>`}
+      <p class="pkg-desc">${p.desc}</p>
+      <div class="pkg-price"><span class="amt">${fmtMoney(p.price)}</span><span class="per">/ person</span></div>
+      <button class="btn btn-primary btn-block btn-sm" onclick="viewPackage('${p.id}')">View Details</button>
+    </div>
+  </div>`;
+}
+
+function renderPublicPackages(list){
+  const grid = document.getElementById('pkgGrid');
+  grid.innerHTML = list.map(pkgCardHTML).join('') || `<div class="empty-state">No packages found.</div>`;
+  const destSel = document.getElementById('searchDest');
+  if(destSel.options.length <= 1){
+    const dests = [...new Set(db.packages.map(p=>p.dest))];
+    dests.forEach(d=>{
+      const o = document.createElement('option'); o.value=d; o.textContent=d; destSel.appendChild(o);
+    });
+  }
+}
+
+function filterPackages(){
+  const dest = document.getElementById('searchDest').value;
+  const list = dest ? db.packages.filter(p=>p.dest===dest) : db.packages;
+  renderPublicPackages(list);
+  document.getElementById('packages').scrollIntoView({behavior:'smooth'});
+}
+
+function viewPackage(id){
+  const p = db.packages.find(x=>x.id===id);
+  if(!p) return;
+  const reviews = pkgReviews(id);
+  const avg = pkgAvgRating(id);
+  const hasBooked = session.role==='customer' && db.bookings.some(b=>b.customerId===session.id && b.pkgId===id);
+
+  let reviewsHTML = reviews.length
+    ? reviews.map(r=>`<div class="review-item">
+        <div class="review-head"><span>${r.customerName}</span><span class="stars">${starsHTML(r.rating)}</span></div>
+        <p>${r.comment}</p>
+      </div>`).join('')
+    : `<p class="hint">No reviews yet — be the first traveller to share one.</p>`;
+
+  let addReviewHTML = '';
+  if(hasBooked){
+    addReviewHTML = `
+      <h4 style="margin-top:20px;font-size:1rem;">Write a review</h4>
+      <div class="star-picker" id="starPicker">
+        ${[1,2,3,4,5].map(n=>`<button type="button" onclick="setReviewStar(${n})" id="star${n}">★</button>`).join('')}
+      </div>
+      <div class="formfield"><textarea id="reviewComment" rows="2" placeholder="How was your trip?"></textarea></div>
+      <button class="btn btn-primary btn-sm" onclick="submitReview('${p.id}')">Submit Review</button>`;
+  } else if(session.role==='customer'){
+    addReviewHTML = `<p class="hint" style="margin-top:16px;">Book this trip to share a review after you travel.</p>`;
+  }
+
+  document.getElementById('pkgDetailContent').innerHTML = `
+    <div class="pkg-art" style="background:${p.color};height:170px;border-radius:6px;margin-bottom:20px;">
+      ${p.photo ? `<img src="${p.photo}" alt="${p.name}">` : ''}
+      <span style="font-size:1.4rem;padding:16px;display:block;">${p.name}</span>
+    </div>
+    <h3>${p.name}</h3>
+    <div class="sub">${p.dest} • ${p.days} Days • ${p.seats} seats available ${reviews.length ? '• ' + avg.toFixed(1) + ' ★ (' + reviews.length + ')' : ''}</div>
+    <p style="margin:16px 0;color:#33404F;">${p.desc}</p>
+    <div class="summary-box">
+      <div class="row"><span>Price per person</span><span>${fmtMoney(p.price)}</span></div>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="closeOverlay('pkgOverlay'); startBooking('${p.id}')">Book This Package</button>
+
+    <h4 style="margin-top:24px;font-size:1.05rem;">Traveller Reviews</h4>
+    <div>${reviewsHTML}</div>
+    ${addReviewHTML}
+  `;
+  reviewDraftRating = 0;
+  openOverlay('pkgOverlay');
+}
+
+function setReviewStar(n){
+  reviewDraftRating = n;
+  for(let i=1;i<=5;i++){
+    document.getElementById('star'+i).classList.toggle('on', i<=n);
+  }
+}
+
+function submitReview(pkgId){
+  const comment = document.getElementById('reviewComment').value.trim();
+  if(reviewDraftRating===0){ toast('Please select a star rating.'); return; }
+  if(!comment){ toast('Please add a short comment.'); return; }
+  const cust = db.customers.find(c=>c.id===session.id);
+  db.reviews.push({id:'r'+(db.reviews.length+1), pkgId, customerId:session.id, customerName:cust.name, rating:reviewDraftRating, comment});
+  toast('Thanks for your review!');
+  viewPackage(pkgId);
+}
+
+/* ---------------- OVERLAY HELPERS ---------------- */
+function openOverlay(id){ document.getElementById(id).classList.add('show'); }
+function closeOverlay(id){
+  document.getElementById(id).classList.remove('show');
+  if(id==='trackOverlay' && trackTimer){ clearInterval(trackTimer); trackTimer=null; }
+}
+
+/* ---------------- AUTH ---------------- */
+
+function openAuth(role){
+  renderAuth(role, 'login');
+  openOverlay('authOverlay');
+}
+function closeAuth(){ closeOverlay('authOverlay'); }
+
+function renderAuth(role, mode){
+  let html = '';
+
+  if(role === 'customer'){
+    html += `
+      <h3>${mode==='login' ? 'Log In' : 'Create Your Account'}</h3>
+      <div class="sub">A customer account is required to book packages</div>
+      <div class="tabs">
+        <button class="tab-btn ${mode==='login'?'active':''}" onclick="renderAuth('customer','login')">Log In</button>
+        <button class="tab-btn ${mode==='signup'?'active':''}" onclick="renderAuth('customer','signup')">Sign Up</button>
+      </div>
+      <div class="err-msg" id="authErr"></div>`;
+    if(mode==='signup'){
+      html += `
+        <div class="formfield"><label>Full Name</label><input id="cName" type="text" placeholder="Your name"></div>
+        <div class="formfield"><label>Email</label><input id="cEmail" type="email" placeholder="you@example.com"></div>
+        <div class="formfield"><label>Phone Number</label><input id="cPhone" type="tel" placeholder="9876543210"></div>
+        <div class="formfield"><label>Password</label><input id="cPass" type="password" placeholder="At least 6 characters"></div>
+        <button class="btn btn-primary btn-block" onclick="customerSignup()">Create Account</button>`;
+    } else {
+      html += `
+        <div class="formfield"><label>Email</label><input id="cEmail" type="email" placeholder="you@example.com"></div>
+        <div class="formfield"><label>Password</label><input id="cPass" type="password" placeholder="Password"></div>
+        <button class="btn btn-primary btn-block" onclick="customerLogin()">Log In</button>`;
+    }
+  }
+
+  if(role === 'agent'){
+    html += `
+      <h3>Agent Login</h3>
+      <div class="sub">Log in to manage your travel packages</div>
+      <div class="err-msg" id="authErr"></div>
+      <div class="formfield"><label>Email</label><input id="aEmail" type="email" placeholder="Your registered email"></div>
+      <div class="formfield"><label>Password</label><input id="aPass" type="password" placeholder="Password"></div>
+      <button class="btn btn-primary btn-block" onclick="agentLogin()">Log In as Agent</button>`;
+  }
+
+  if(role === 'admin'){
+    html += `
+      <h3>Admin Login</h3>
+      <div class="sub">View a full overview of the platform</div>
+      <div class="err-msg" id="authErr"></div>
+      <div class="formfield"><label>Email</label><input id="adEmail" type="email" placeholder="Your registered email"></div>
+      <div class="formfield"><label>Password</label><input id="adPass" type="password" placeholder="Password"></div>
+      <button class="btn btn-primary btn-block" onclick="adminLogin()">Log In as Admin</button>`;
+  }
+
+  document.getElementById('authContent').innerHTML = html;
+}
+
+function showAuthErr(msg){
+  const el = document.getElementById('authErr');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+function customerSignup(){
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim().toLowerCase();
+  const phone = document.getElementById('cPhone').value.trim();
+  const pass = document.getElementById('cPass').value;
+  if(!name || !email || !pass){ showAuthErr('Please fill in all required fields.'); return; }
+  if(db.customers.find(c=>c.email===email)){ showAuthErr('An account with this email already exists — please log in.'); return; }
+  const id = 'c' + (db.customers.length + 1);
+  db.customers.push({id, name, email, phone, password:pass});
+  session = {role:'customer', id};
+  closeAuth();
+  enterCustomerDash();
+  toast('Account created — welcome, ' + name + '!');
+}
+
+function customerLogin(){
+  const email = document.getElementById('cEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('cPass').value;
+  const c = db.customers.find(x=>x.email===email && x.password===pass);
+  if(!c){ showAuthErr('Incorrect email or password, or no account exists — try signing up.'); return; }
+  session = {role:'customer', id:c.id};
+  closeAuth();
+  enterCustomerDash();
+  toast('Welcome back, ' + c.name + '!');
+}
+
+function agentLogin(){
+  const email = document.getElementById('aEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('aPass').value;
+  const a = db.agents.find(x=>x.email===email && x.password===pass);
+  if(!a){ showAuthErr('Incorrect email or password.'); return; }
+  session = {role:'agent', id:a.id};
+  closeAuth();
+  enterAgentDash();
+  toast('Welcome back, ' + a.name + '!');
+}
+
+function adminLogin(){
+  const email = document.getElementById('adEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('adPass').value;
+  if(email !== db.admin.email || pass !== db.admin.password){ showAuthErr('Incorrect email or password.'); return; }
+  session = {role:'admin', id:'admin'};
+  closeAuth();
+  enterAdminDash();
+  toast('Welcome to the admin dashboard.');
+}
+
+function logout(role){
+  session = {role:null, id:null};
+  document.getElementById('dash' + role.charAt(0).toUpperCase() + role.slice(1)).classList.remove('show');
+  document.getElementById('publicSite').style.display = 'block';
+  window.scrollTo(0,0);
+  toast('You have been logged out.');
+}
+
+/* ---------------- DASHBOARD ENTRY ---------------- */
+
+function showPanel(scope, name){
+  document.querySelectorAll('#dash' + scope.charAt(0).toUpperCase()+scope.slice(1) + ' .panel').forEach(p=>p.classList.remove('show'));
+  document.getElementById(scope + '-' + name).classList.add('show');
+  document.querySelectorAll('#dash' + scope.charAt(0).toUpperCase()+scope.slice(1) + ' .dash-nav button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  if(scope==='agent' && name==='profile') loadAgentProfile();
+}
+
+function enterCustomerDash(){
+  document.getElementById('publicSite').style.display = 'none';
+  const c = db.customers.find(x=>x.id===session.id);
+  document.getElementById('custName').textContent = c.name;
+  document.getElementById('custPkgGrid').innerHTML = db.packages.map(pkgCardHTML).join('');
+  renderCustomerBookings();
+  document.getElementById('dashCustomer').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+function enterAgentDash(){
+  document.getElementById('publicSite').style.display = 'none';
+  const a = db.agents.find(x=>x.id===session.id);
+  document.getElementById('agentName').textContent = a.name;
+  const av = document.getElementById('agentAvatar');
+  av.innerHTML = a.photo ? `<img src="${a.photo}" alt="">` : `<span>${a.name.charAt(0)}</span>`;
+  renderAgentPackages();
+  renderAgentBookings();
+  document.getElementById('dashAgent').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+function enterAdminDash(){
+  document.getElementById('publicSite').style.display = 'none';
+  renderAdminOverview();
+  document.getElementById('dashAdmin').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+/* ---------------- AGENT PROFILE ---------------- */
+
+function loadAgentProfile(){
+  const a = db.agents.find(x=>x.id===session.id);
+  pendingAgentPhoto = null;
+  pendingSiteLogo = null;
+  document.getElementById('siteLogoPreview').innerHTML = db.site.logo ? `<img src="${db.site.logo}" alt="">` : `<span>MT</span>`;
+  document.getElementById('agProfName').value = a.name;
+  document.getElementById('agProfPhone').value = a.phone || '';
+  document.getElementById('agProfTerms').value = a.terms || '';
+  const preview = document.getElementById('agProfPhotoPreview');
+  preview.innerHTML = a.photo ? `<img src="${a.photo}" alt="">` : `<span>👤</span>`;
+  setAgentPayMethod(a.payment.method, true);
+}
+
+function handleAgentPhoto(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    pendingAgentPhoto = e.target.result;
+    document.getElementById('agProfPhotoPreview').innerHTML = `<img src="${pendingAgentPhoto}" alt="">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function setAgentPayMethod(method, silent){
+  const a = db.agents.find(x=>x.id===session.id);
+  document.getElementById('agPayUPIBtn').classList.toggle('active', method==='upi');
+  document.getElementById('agPayBankBtn').classList.toggle('active', method==='bank');
+  const box = document.getElementById('agentPayFields');
+  if(method==='upi'){
+    box.innerHTML = `<div class="formfield"><label>UPI ID</label><input type="text" id="agProfUPI" placeholder="yourname@upi" value="${silent ? (a.payment.upi||'') : ''}"></div>`;
+  } else {
+    box.innerHTML = `
+      <div class="grid2">
+        <div class="formfield"><label>Account Holder Name</label><input type="text" id="agProfHolder" value="${silent ? (a.payment.holder||'') : ''}"></div>
+        <div class="formfield"><label>Bank Name</label><input type="text" id="agProfBank" value="${silent ? (a.payment.bankName||'') : ''}"></div>
+      </div>
+      <div class="grid2">
+        <div class="formfield"><label>Account Number</label><input type="text" id="agProfAcct" value="${silent ? (a.payment.accountNo||'') : ''}"></div>
+        <div class="formfield"><label>IFSC Code</label><input type="text" id="agProfIfsc" value="${silent ? (a.payment.ifsc||'') : ''}"></div>
+      </div>`;
+  }
+  box.dataset.method = method;
+}
+
+function saveAgentProfile(){
+  const a = db.agents.find(x=>x.id===session.id);
+  const name = document.getElementById('agProfName').value.trim();
+  const phone = document.getElementById('agProfPhone').value.trim();
+  const terms = document.getElementById('agProfTerms').value.trim();
+  if(!name){ toast('Please enter your name.'); return; }
+  const method = document.getElementById('agentPayFields').dataset.method;
+  let payment;
+  if(method==='upi'){
+    payment = {method:'upi', upi:document.getElementById('agProfUPI').value.trim(), holder:'', accountNo:'', ifsc:'', bankName:''};
+  } else {
+    payment = {method:'bank',
+      holder:document.getElementById('agProfHolder').value.trim(),
+      bankName:document.getElementById('agProfBank').value.trim(),
+      accountNo:document.getElementById('agProfAcct').value.trim(),
+      ifsc:document.getElementById('agProfIfsc').value.trim(), upi:''};
+  }
+  Object.assign(a, {name, phone, terms, payment});
+  if(pendingAgentPhoto) a.photo = pendingAgentPhoto;
+  document.getElementById('agentName').textContent = a.name;
+  document.getElementById('agentAvatar').innerHTML = a.photo ? `<img src="${a.photo}" alt="">` : `<span>${a.name.charAt(0)}</span>`;
+  toast('Profile saved.');
+}
+
+/* ---------------- BOOKING + PAYMENT FLOW ---------------- */
+
+function startBooking(pkgId){
+  if(session.role !== 'customer'){
+    openAuth('customer');
+    toast('Please log in first to continue booking.');
+    return;
+  }
+  const p = db.packages.find(x=>x.id===pkgId);
+  pendingBooking = {pkgId:p.id, travelers:2, date:''};
+  renderBookingStep('details');
+  openOverlay('bookOverlay');
+}
+
+function renderBookingStep(step){
+  const p = db.packages.find(x=>x.id===pendingBooking.pkgId);
+  let html = `<div class="paystep-badges">
+    <span class="${step==='details'?'on':''}">1. Trip Details</span>
+    <span class="${step==='pay'?'on':''}">2. Payment</span>
+    <span class="${step==='done'?'on':''}">3. Confirmation</span>
+  </div>`;
+
+  if(step === 'details'){
+    html += `
+      <h3>${p.name}</h3>
+      <div class="sub">${p.dest} • ${p.days} Days</div>
+      <div class="formfield" style="margin-top:16px;"><label>Travel Date</label><input type="date" id="bkDate"></div>
+      <div class="formfield"><label>Number of Travellers</label><input type="number" id="bkPax" value="2" min="1" max="${p.seats}"></div>
+      <div class="summary-box">
+        <div class="row"><span>Price per person</span><span>${fmtMoney(p.price)}</span></div>
+        <div class="row total"><span>Estimated Total</span><span id="bkTotal">${fmtMoney(p.price*2)}</span></div>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="confirmDetails()">Continue to Payment</button>`;
+  }
+
+  if(step === 'pay'){
+    const total = p.price * pendingBooking.travelers;
+    html += `
+      <h3>Payment</h3>
+      <div class="sub">Package + Ticket Payment — ${p.name}</div>
+      <div class="pay-method-row">
+        <button class="active" id="payUPI" onclick="selectPayMethod('upi')">UPI</button>
+        <button id="payCard" onclick="selectPayMethod('card')">Card</button>
+        <button id="payNB" onclick="selectPayMethod('netbanking')">Net Banking</button>
+      </div>
+      <div id="payFields"></div>
+      <div class="summary-box">
+        <div class="row"><span>Travellers</span><span>${pendingBooking.travelers}</span></div>
+        <div class="row"><span>Date</span><span>${pendingBooking.date || '—'}</span></div>
+        <div class="row total"><span>Amount Due</span><span>${fmtMoney(total)}</span></div>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="processPayment()">Pay ${fmtMoney(total)}</button>
+      <p class="hint" style="text-align:center;margin-top:10px;">🔒 This is a demo payment screen — no real amount will be charged.</p>`;
+  }
+
+  if(step === 'done'){
+    const b = pendingBooking.finalBooking;
+    html += `
+      <div style="text-align:center;padding:10px 0 6px;">
+        <div style="width:56px;height:56px;border-radius:50%;background:#DEEFE3;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12L9 17L20 6" stroke="#2F7A50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Booking Confirmed!</h3>
+        <div class="sub">Booking ID: ${b.id} • Seat ${b.seatNo}</div>
+      </div>
+      <div class="summary-box">
+        <div class="row"><span>Package</span><span>${p.name}</span></div>
+        <div class="row"><span>Date</span><span>${b.date}</span></div>
+        <div class="row"><span>Travellers</span><span>${b.travelers}</span></div>
+        <div class="row total"><span>Amount Paid</span><span>${fmtMoney(b.amount)}</span></div>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="closeOverlay('bookOverlay'); openTicket('${b.id}')">View E-Ticket</button>
+      <button class="btn btn-ghost btn-block" style="margin-top:10px;" onclick="closeOverlay('bookOverlay'); showPanelDirect('customer','bookings')">Go to My Bookings</button>`;
+  }
+
+  document.getElementById('bookContent').innerHTML = html;
+  if(step==='details'){
+    document.getElementById('bkDate').addEventListener('change', updateTotal);
+    document.getElementById('bkPax').addEventListener('input', updateTotal);
+  }
+  if(step==='pay') selectPayMethod('upi');
+}
+
+function updateTotal(){
+  const p = db.packages.find(x=>x.id===pendingBooking.pkgId);
+  const pax = Math.max(1, Number(document.getElementById('bkPax').value || 1));
+  document.getElementById('bkTotal').textContent = fmtMoney(p.price*pax);
+}
+
+function confirmDetails(){
+  const date = document.getElementById('bkDate').value;
+  const pax = Number(document.getElementById('bkPax').value || 1);
+  if(!date){ toast('Please select a travel date.'); return; }
+  pendingBooking.date = date;
+  pendingBooking.travelers = pax;
+  renderBookingStep('pay');
+}
+
+function selectPayMethod(method){
+  pendingBooking.method = method;
+  ['payUPI','payCard','payNB'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  document.getElementById(method==='upi'?'payUPI':method==='card'?'payCard':'payNB').classList.add('active');
+  const box = document.getElementById('payFields');
+  if(method==='upi'){
+    box.innerHTML = `<div class="formfield"><label>UPI ID</label><input type="text" placeholder="yourname@upi"></div>`;
+  } else if(method==='card'){
+    box.innerHTML = `
+      <div class="formfield"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456"></div>
+      <div class="grid2">
+        <div class="formfield"><label>Expiry</label><input type="text" placeholder="MM/YY"></div>
+        <div class="formfield"><label>CVV</label><input type="text" placeholder="•••"></div>
+      </div>`;
+  } else {
+    box.innerHTML = `<div class="formfield"><label>Select Bank</label><select><option>State Bank of India</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option></select></div>`;
+  }
+}
+
+function genSeat(){
+  const row = 'ABCDEF'[Math.floor(Math.random()*6)];
+  const num = Math.floor(Math.random()*40)+1;
+  return row + num;
+}
+
+function processPayment(){
+  const p = db.packages.find(x=>x.id===pendingBooking.pkgId);
+  const amount = p.price * pendingBooking.travelers;
+  const booking = {
+    id: 'BK' + Math.floor(1000 + Math.random()*9000),
+    pkgId: p.id,
+    pkgName: p.name,
+    agentId: p.agent,
+    customerId: session.id,
+    date: pendingBooking.date,
+    travelers: pendingBooking.travelers,
+    amount,
+    method: pendingBooking.method,
+    status: 'paid',
+    seatNo: genSeat(),
+  };
+  db.bookings.push(booking);
+  p.seats = Math.max(0, p.seats - pendingBooking.travelers);
+  pendingBooking.finalBooking = booking;
+  renderBookingStep('done');
+}
+
+function showPanelDirect(scope, name){
+  document.querySelectorAll('#dash' + scope.charAt(0).toUpperCase()+scope.slice(1) + ' .panel').forEach(p=>p.classList.remove('show'));
+  document.getElementById(scope + '-' + name).classList.add('show');
+  renderCustomerBookings();
+}
+
+/* ---------------- CUSTOMER: MY BOOKINGS ---------------- */
+function renderCustomerBookings(){
+  const mine = db.bookings.filter(b=>b.customerId===session.id);
+  const el = document.getElementById('custBookingsTable');
+  if(!mine.length){ el.innerHTML = `<div class="empty-state">No bookings yet — book a package above to get started.</div>`; return; }
+  el.innerHTML = `<table class="data"><thead><tr>
+    <th>Booking ID</th><th>Package</th><th>Date</th><th>Seat</th><th>Amount</th><th>Status</th><th>Actions</th>
+  </tr></thead><tbody>
+    ${mine.map(b=>{
+      const p = db.packages.find(x=>x.id===b.pkgId);
+      return `<tr>
+      <td>${b.id}</td><td>${b.pkgName}</td><td>${b.date}</td><td>${b.seatNo}</td><td>${fmtMoney(b.amount)}</td>
+      <td><span class="pill-status pill-paid">Paid</span></td>
+      <td class="row-actions">
+        <button class="btn btn-ghost btn-xs" onclick="openTicket('${b.id}')">Ticket</button>
+        ${p && p.tracking ? `<button class="btn btn-ghost btn-xs" onclick="openTracking('${b.id}')">Track Bus</button>` : ''}
+        <button class="btn btn-ghost btn-xs" onclick="closeOverlay('bookOverlay'); viewPackage('${b.pkgId}')">Review</button>
+      </td>
+    </tr>`;
+    }).join('')}
+  </tbody></table>`;
+}
+
+/* ---------------- E-TICKET ---------------- */
+function openTicket(bookingId){
+  const b = db.bookings.find(x=>x.id===bookingId);
+  const p = db.packages.find(x=>x.id===b.pkgId);
+  const ag = db.agents.find(x=>x.id===b.agentId);
+  const cust = db.customers.find(x=>x.id===b.customerId);
+  document.getElementById('ticketContent').innerHTML = `
+    <div id="ticketPrintArea">
+      <div class="ticket">
+        <div class="ticket-main">
+          <div class="ticket-brand"><div class="mark"><span>MT</span></div><b>Mansi Travels</b></div>
+          <div class="ticket-route">${p.name}</div>
+          <div class="ticket-sub">${p.dest} • ${p.days} Days • Booking ID ${b.id}</div>
+          <div class="ticket-grid">
+            <div><div class="k">Passenger</div><div class="v">${cust.name}</div></div>
+            <div><div class="k">Travellers</div><div class="v">${b.travelers}</div></div>
+            <div><div class="k">Travel Date</div><div class="v">${b.date}</div></div>
+            <div><div class="k">Amount Paid</div><div class="v">${fmtMoney(b.amount)}</div></div>
+            <div><div class="k">Agent</div><div class="v">${ag.name}</div></div>
+            <div><div class="k">Contact</div><div class="v">${ag.phone || '—'}</div></div>
+          </div>
+          <div class="ticket-terms"><b>Terms &amp; Conditions:</b> ${ag.terms}</div>
+        </div>
+        <div class="ticket-stub">
+          <div class="ticket-seat"><div class="k">Seat</div><div class="v">${b.seatNo}</div></div>
+          <div class="ticket-barcode"></div>
+          <div class="ticket-bid">${b.id}</div>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-actions">
+      <button class="btn btn-gold btn-block" onclick="window.print()">Print / Save Ticket</button>
+      <button class="btn btn-ghost" onclick="closeOverlay('ticketOverlay')">Close</button>
+    </div>
+  `;
+  openOverlay('ticketOverlay');
+}
+
+/* ---------------- LIVE TRACKING (simulated) ---------------- */
+function openTracking(bookingId){
+  const b = db.bookings.find(x=>x.id===bookingId);
+  const p = db.packages.find(x=>x.id===b.pkgId);
+  let progress = Math.floor(Math.random()*30)+10;
+  document.getElementById('trackContent').innerHTML = `
+    <h3>Live Bus Tracking</h3>
+    <div class="sub">${p.name} • Booking ${b.id}</div>
+    <div class="track-card">
+      <div class="track-endpoints"><span>Departure</span><span>${p.dest}</span></div>
+      <div class="track-route-line">
+        <div class="fill" id="trackFill" style="width:${progress}%"></div>
+        <div class="track-bus-dot" id="trackDot" style="left:${progress}%"><span>🚌</span></div>
+      </div>
+      <div class="track-meta"><span>Progress: <b id="trackPct">${progress}%</b></span><span>ETA: <b id="trackEta">${Math.round((100-progress)*0.6)} min</b></span></div>
+      <div class="track-note">This is a simulated live-tracking preview for the demo. Connecting it to your buses' real GPS location will need a small backend/GPS-device integration — happy to help plan that when you're ready to go live.</div>
+    </div>
+  `;
+  openOverlay('trackOverlay');
+  if(trackTimer) clearInterval(trackTimer);
+  trackTimer = setInterval(()=>{
+    progress = Math.min(100, progress + Math.floor(Math.random()*4)+1);
+    const fill = document.getElementById('trackFill');
+    const dot = document.getElementById('trackDot');
+    if(!fill) { clearInterval(trackTimer); return; }
+    fill.style.width = progress + '%';
+    dot.style.left = progress + '%';
+    document.getElementById('trackPct').textContent = progress + '%';
+    document.getElementById('trackEta').textContent = Math.round((100-progress)*0.6) + ' min';
+    if(progress>=100) clearInterval(trackTimer);
+  }, 1800);
+}
+
+/* ---------------- AGENT PANELS ---------------- */
+function renderAgentPackages(){
+  const mine = db.packages.filter(p=>p.agent===session.id);
+  const el = document.getElementById('agentPkgList');
+  el.innerHTML = mine.map(p=>`
+    <div class="pkg-list-item">
+      <div class="info">
+        <div class="pkg-thumb">${p.photo ? `<img src="${p.photo}" alt="">` : `<span style="color:#F7F5EF;font-size:.7rem;">No photo</span>`}</div>
+        <div>
+          <h4>${p.name}</h4>
+          <p>${p.dest} • ${p.days} Days • ${fmtMoney(p.price)}/person • ${p.seats} seats left ${p.tracking ? '• Tracking on' : ''}</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ghost btn-sm" onclick="editPackage('${p.id}')">Update</button>
+      </div>
+    </div>
+  `).join('') || `<div class="empty-state">You haven't added any packages yet.</div>`;
+}
+
+function handlePkgPhoto(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    pendingPkgPhoto = e.target.result;
+    document.getElementById('pkgPhotoPreview').innerHTML = `<img src="${pendingPkgPhoto}" alt="">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function editPackage(id){
+  const p = db.packages.find(x=>x.id===id);
+  pendingPkgPhoto = p.photo;
+  document.getElementById('editPkgId').value = p.id;
+  document.getElementById('pkgFormTitle').textContent = 'Update Package';
+  document.getElementById('pkgName').value = p.name;
+  document.getElementById('pkgDest').value = p.dest;
+  document.getElementById('pkgDays').value = p.days;
+  document.getElementById('pkgPrice').value = p.price;
+  document.getElementById('pkgSeats').value = p.seats;
+  document.getElementById('pkgDesc').value = p.desc;
+  document.getElementById('pkgTracking').checked = !!p.tracking;
+  document.getElementById('pkgPhotoPreview').innerHTML = p.photo ? `<img src="${p.photo}" alt="">` : `<span>🖼</span>`;
+  showPanel_manual('agent','add');
+  syncAgentNav('add');
+}
+
+function syncAgentNav(name){
+  const labels = {packages:'My Packages', add:'Add New Package', bookings:'Incoming Bookings', profile:'My Profile & Payments'};
+  document.querySelectorAll('#dashAgent .dash-nav button').forEach(b=>{
+    b.classList.toggle('active', b.textContent.trim() === labels[name]);
+  });
+}
+
+function savePackage(){
+  const id = document.getElementById('editPkgId').value;
+  const name = document.getElementById('pkgName').value.trim();
+  const dest = document.getElementById('pkgDest').value.trim();
+  const days = Number(document.getElementById('pkgDays').value || 0);
+  const price = Number(document.getElementById('pkgPrice').value || 0);
+  const seats = Number(document.getElementById('pkgSeats').value || 0);
+  const desc = document.getElementById('pkgDesc').value.trim();
+  const tracking = document.getElementById('pkgTracking').checked;
+  if(!name || !dest || !days || !price){ toast('Please fill in the required fields.'); return; }
+  const colors = ['#0B2545','#123464','#96742F','#071A33','#B8924E','#16202E'];
+
+  if(id){
+    const p = db.packages.find(x=>x.id===id);
+    Object.assign(p, {name, dest, days, price, seats, desc, tracking});
+    if(pendingPkgPhoto !== undefined) p.photo = pendingPkgPhoto;
+    toast('Package updated.');
+  } else {
+    const newId = 'p' + (db.packages.length + 1);
+    db.packages.push({id:newId, name, dest, days, price, seats, desc, agent:session.id, color: colors[db.packages.length % colors.length], photo:pendingPkgPhoto || null, tracking});
+    toast('New package added.');
+  }
+  document.getElementById('editPkgId').value = '';
+  document.getElementById('pkgFormTitle').textContent = 'Add New Package';
+  ['pkgName','pkgDest','pkgDays','pkgPrice','pkgSeats','pkgDesc'].forEach(f=>document.getElementById(f).value='');
+  document.getElementById('pkgTracking').checked = true;
+  document.getElementById('pkgPhotoPreview').innerHTML = '<span>🖼</span>';
+  pendingPkgPhoto = null;
+  renderAgentPackages();
+  showPanel_manual('agent','packages');
+  syncAgentNav('packages');
+}
+
+function showPanel_manual(scope,name){
+  document.querySelectorAll('#dash' + scope.charAt(0).toUpperCase()+scope.slice(1) + ' .panel').forEach(p=>p.classList.remove('show'));
+  document.getElementById(scope + '-' + name).classList.add('show');
+}
+
+function renderAgentBookings(){
+  const myPkgIds = db.packages.filter(p=>p.agent===session.id).map(p=>p.id);
+  const rows = db.bookings.filter(b=>myPkgIds.includes(b.pkgId));
+  const el = document.getElementById('agentBookingsTable');
+  if(!rows.length){ el.innerHTML = `<div class="empty-state">No bookings have come in on your packages yet.</div>`; return; }
+  el.innerHTML = `<table class="data"><thead><tr>
+    <th>Booking ID</th><th>Package</th><th>Date</th><th>Seat</th><th>Travellers</th><th>Amount</th><th>Status</th>
+  </tr></thead><tbody>
+    ${rows.map(b=>`<tr><td>${b.id}</td><td>${b.pkgName}</td><td>${b.date}</td><td>${b.seatNo}</td><td>${b.travelers}</td><td>${fmtMoney(b.amount)}</td><td><span class="pill-status pill-confirmed">Confirmed</span></td></tr>`).join('')}
+  </tbody></table>`;
+}
+
+/* ---------------- ADMIN PANELS ---------------- */
+function renderAdminOverview(){
+  document.getElementById('statPkgs').textContent = db.packages.length;
+  document.getElementById('statBookings').textContent = db.bookings.length;
+  const revenue = db.bookings.reduce((s,b)=>s+b.amount,0);
+  document.getElementById('statRevenue').textContent = fmtMoney(revenue);
+  document.getElementById('statAgents').textContent = db.agents.length;
+
+  const bEl = document.getElementById('adminBookingsTable');
+  bEl.innerHTML = db.bookings.length ? `<table class="data"><thead><tr>
+      <th>Booking ID</th><th>Package</th><th>Seat</th><th>Customer</th><th>Agent</th><th>Amount</th><th>Status</th>
+    </tr></thead><tbody>
+      ${db.bookings.map(b=>{
+        const cust = db.customers.find(c=>c.id===b.customerId);
+        const ag = db.agents.find(a=>a.id===b.agentId);
+        return `<tr><td>${b.id}</td><td>${b.pkgName}</td><td>${b.seatNo}</td><td>${cust?cust.name:'—'}</td><td>${ag?ag.name:'—'}</td><td>${fmtMoney(b.amount)}</td><td><span class="pill-status pill-paid">Paid</span></td></tr>`;
+      }).join('')}
+    </tbody></table>` : `<div class="empty-state">No bookings have been made yet.</div>`;
+
+  const pEl = document.getElementById('adminPkgTable');
+  pEl.innerHTML = `<table class="data"><thead><tr>
+      <th>Package</th><th>Destination</th><th>Agent</th><th>Price</th><th>Seats Left</th><th>Tracking</th>
+    </tr></thead><tbody>
+      ${db.packages.map(p=>{
+        const ag = db.agents.find(a=>a.id===p.agent);
+        return `<tr><td>${p.name}</td><td>${p.dest}</td><td>${ag?ag.name:'—'}</td><td>${fmtMoney(p.price)}</td><td>${p.seats}</td><td>${p.tracking?'On':'Off'}</td></tr>`;
+      }).join('')}
+    </tbody></table>`;
+
+  const aEl = document.getElementById('adminAgentTable');
+  aEl.innerHTML = `<table class="data"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Payout Method</th><th>Packages</th><th>Bookings</th></tr></thead><tbody>
+      ${db.agents.map(a=>{
+        const pkgCount = db.packages.filter(p=>p.agent===a.id).length;
+        const bkCount = db.bookings.filter(b=>b.agentId===a.id).length;
+        const payout = a.payment.method==='upi' ? (a.payment.upi ? 'UPI: '+a.payment.upi : 'UPI (not set)') : (a.payment.accountNo ? 'Bank: •••' + a.payment.accountNo.slice(-4) : 'Bank (not set)');
+        return `<tr><td>${a.name}</td><td>${a.email}</td><td>${a.phone||'—'}</td><td>${payout}</td><td>${pkgCount}</td><td>${bkCount}</td></tr>`;
+      }).join('')}
+    </tbody></table>`;
+}
+
+/* ---------------- INIT ---------------- */
+renderPublicPackages(db.packages);
+</script>
+</body>
+</html>
